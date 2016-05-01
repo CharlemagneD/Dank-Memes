@@ -19,6 +19,10 @@
   <strong>Rating:</strong>
   <%= @meme.rating %>
 </p>
+<p>
+<%= @url = "http://apimeme.com/meme?" + @meme.meme_type + "&top=" + @meme.top_text + "&bottom=" + @meme.bottom_text %>
+<img src = @url></img>
+</p>
 
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
 <%= link_to 'Back', memes_path %>
