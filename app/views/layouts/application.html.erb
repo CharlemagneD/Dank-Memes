@@ -5,9 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
+<% if dank_user_signed_in? %>
+                <%= link_to "Sign Out", destroy_dank_user_session_path, method: :delete, class:"waves-effect waves-light btn" %>
+              <% else %>
+                <%= link_to "Login", new_dank_user_session_path, class:"waves-effect waves-light btn"%>
+<% end %>
+
+<% if notice %>
+    <script type="text/javascript">
+      Materialize.toast('<%= notice %>', 1500)
+    </script>
+  <% end %>
+  <% if alert %>
+    <script type="text/javascript">
+      Materialize.toast('<%= alert %>', 1500)
+    </script>
+  <% end %>
 <%= yield %>
 
 </body>

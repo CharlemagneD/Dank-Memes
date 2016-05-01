@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meme_type: MyString
+  top_text: MyString
+  bottom_text: MyString
+  rating: 9.99
+
+two:
+  meme_type: MyString
+  top_text: MyString
+  bottom_text: MyString
+  rating: 9.99
