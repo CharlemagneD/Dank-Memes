@@ -1,5 +1,6 @@
 class MemesController < ApplicationController
   before_action :set_meme, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_dank_user!, except: [:index, :show]
 
   # GET /memes
   # GET /memes.json
@@ -24,7 +25,7 @@ class MemesController < ApplicationController
   # POST /memes
   # POST /memes.json
   def create
-    @meme = Meme.new(meme_params)
+    @meme = current_dank_user.memes.new(meme_params)
 
     respond_to do |format|
       if @meme.save
