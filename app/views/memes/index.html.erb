@@ -2,9 +2,10 @@
 
 <h1>Listing Memes</h1>
 
-<table>
+<table class="highlight">
   <thead>
     <tr>
+      <th>User</th>
       <th>Meme type</th>
       <th>Top text</th>
       <th>Bottom text</th>
@@ -16,13 +17,16 @@
   <tbody>
     <% @memes.each do |meme| %>
       <tr>
+        <td><%= meme.dank_user.email %></td>
         <td><%= meme.meme_type %></td>
         <td><%= meme.top_text %></td>
         <td><%= meme.bottom_text %></td>
         <td><%= meme.rating %></td>
+        <% if current_dank_user.id == meme.dank_user_id %>
         <td><%= link_to 'Show', meme %></td>
         <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
         <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
