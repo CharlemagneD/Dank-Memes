@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p id="meme-type">
   <strong>Meme type:</strong>
   <%= @meme.meme_type %>
 </p>
@@ -22,3 +22,9 @@
 
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
 <%= link_to 'Back', memes_path %>
+
+<script type="text/javascript">
+	var str = document.getElementById("meme-type").innerHTML;
+	var res = str.replace(/[+]/g, " ");
+	document.getElementById("meme-type").innerHTML = res;
+</script>

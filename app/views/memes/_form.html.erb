@@ -13,7 +13,20 @@
 
   <div class="field">
     <%= f.label :meme_type %><br>
-    <%= f.text_field :meme_type %>
+    <%= f.select :meme_type, options_for_select([
+      ['Aint Nobody Got Time For That', 'Aint+Nobody+Got+Time+For+That'], 
+      ['Ancient Aliens', 'Ancient+Aliens'],
+      ['Bad Luck Brian', 'Bad+Luck+Brian'],
+      ['Captain Picard Facepalm', 'Captain+Picard+Facepalm'],
+      ['Condescending Wonka', 'Conspiracy+Keanu'],
+      ['Cool Story Bro', 'Cool+Story+Bro'],
+      ['Dat Ass', 'Dat+Ass'],
+      ['Deadpool Pick Up Lines', 'Deadpool+Pick+Up+Lines'],
+      ['Dont You Squidward', 'Dont+You+Squidward'],
+      ['Forever Alone ', 'Forever+Alone'],
+      ['Neil deGrasse Tyson', 'Neil+deGrasse+Tyson'],
+      ['Yao Ming', 'Yao+Ming']
+    ])%>
   </div>
   <div class="field">
     <%= f.label :top_text %><br>
@@ -27,3 +40,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('select').material_select();
+});
+</script>
