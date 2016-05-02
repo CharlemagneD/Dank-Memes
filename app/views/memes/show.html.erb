@@ -20,7 +20,7 @@
   <%= @meme.rating %>
 </p>
 <p>
-<%= @url = "http://apimeme.com/meme?meme=" + @meme.meme_type + "&top=" + @meme.top_text + "&bottom=" + @meme.bottom_text %>
+<% @url = "http://apimeme.com/meme?meme=" + @meme.meme_type + "&top=" + @meme.top_text + "&bottom=" + @meme.bottom_text %>
 <img src = "<%=@url%>"></img>
 </p>
 
