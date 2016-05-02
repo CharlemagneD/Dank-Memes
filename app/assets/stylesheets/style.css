@@ -3,6 +3,15 @@
   src: url(/assets/ka1.ttf) format("truetype");
 }
 
+
+.meme-margin-top {
+    margin-top: 20px;
+}
+
 #dank-logo {
   font-family: "Ka1";
+}
+
+#meme-btn-color {
+    background-color: #7986cb;
 }
