@@ -12,13 +12,24 @@
 </head>
 <body>
 
-<% if dank_user_signed_in? %>
-<p><%= current_dank_user.id %></p>
-<p><%= current_dank_user.email%></p>
-                <%= link_to "Sign Out", destroy_dank_user_session_path, method: :delete, class:"waves-effect waves-light btn" %>
-              <% else %>
-                <%= link_to "Login", new_dank_user_session_path, class:"waves-effect waves-light btn"%>
-<% end %>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" id="dank-logo" class="brand-logo">Dank Memes</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if dank_user_signed_in? %>
+      <li><a href="/memes">Memes</a></li>
+      <li><a href="#"><%= current_dank_user.email%></a></li>
+          <%= link_to "Sign Out", destroy_dank_user_session_path, method: :delete, class:"waves-effect waves-light btn" %>
+      <% else %>
+        <%= link_to "Login", new_dank_user_session_path, class:"waves-effect waves-light btn"%>
+      <% end %>
+    </ul>
+
+  </div>
+</nav>
+
+
+
 
 <% if notice %>
     <script type="text/javascript">
