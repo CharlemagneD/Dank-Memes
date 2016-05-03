@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rails_12factor', group: :production
 # PostgreSql
 gem 'pg'
 # Devise
