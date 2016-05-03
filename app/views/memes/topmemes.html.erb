@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+        <%= link_to new_meme_path, :class =>'btn-floating btn-large waves-effect waves-purple', :id =>'meme-btn-color' do%>
+          <i class="material-icons">add</i>
+        <% end %>
+ <div class="row meme-margin-top">
+    <% @memes.each do |meme| %>
+
+    <% @url = "http://apimeme.com/meme?meme=" + meme.meme_type + "&top=" + meme.top_text + "&bottom=" + meme.bottom_text 
+    %>
+            <div class="col s12 m4 l4">
+              <div class="card">
+               <div class="card-image">
+                 <img src = "<%=@url%>"></img>
+               </div>
+               <div class="card-content">
+                <!--
+                <p id="meme-type">
+                  <span class="card-title grey-text text-darken-4>"><%= meme.meme_type %></span>
+                </p>
+                -->
+
+                <%= link_to image_tag("/assets/GnomeUp.png", :class =>'meme-vote'), upvote_meme_path(meme), method: :post, :class => "meme-vote"%>
+                <%= link_to image_tag("/assets/GnomeDown.png", :class =>'meme-vote'), downvote_meme_path(meme), method: :post, :class => "meme-vote" %>
+                 <strong><%= meme.rating %></strong>
+              </div>
+             <div class="card-action">
+             <% if current_dank_user.id == meme.dank_user_id %>
+               <%= link_to 'Show', meme %>
+               <%= link_to 'Edit', edit_meme_path(meme) %>
+               <%= link_to 'Delete', meme, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+             </div>
+         </div>  
+       </div>
+    <% end %>
+</div>  
+</div>
+
+
