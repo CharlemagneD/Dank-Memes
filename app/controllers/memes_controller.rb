@@ -67,7 +67,7 @@ class MemesController < ApplicationController
   def upvote
     @meme = Meme.find(params[:id])
     current_dank_user.vote_exclusively_for(@meme)
-    @meme.rating = @meme.votes_for
+    @meme.rating = @meme.plusminus
     @meme.save
     redirect_to(:back)
   end
@@ -75,7 +75,7 @@ class MemesController < ApplicationController
   def downvote
     @meme = Meme.find(params[:id])
     current_dank_user.vote_exclusively_against(@meme)
-    @meme.rating = @meme.votes_for
+    @meme.rating = @meme.plusminus
     @meme.save
     redirect_to(:back)
   end
