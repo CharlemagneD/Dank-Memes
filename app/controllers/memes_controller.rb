@@ -85,7 +85,7 @@ class MemesController < ApplicationController
   end
 
   def newmemes
-    @memes = Meme.order(updated_at: :desc)
+    @memes = Meme.order(created_at: :desc)
   end
 
   private
