@@ -3,9 +3,20 @@
   src: url(/assets/ka1.ttf) format("truetype");
 }
 
+.intro {
+    text-align: center;
+    padding-top: 13%;
+    padding-bottom: 13%;
+    margin-bottom: 50px;
+}
 
 .meme-margin-top {
     margin-top: 20px;
+}
+
+#dank-text {
+	font-family: "Ka1";
+	background-color: black;
 }
 
 #dank-logo {
@@ -20,3 +31,4 @@
 	width: 37px;
 	height: 48px;
 }
+
