@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DankMemes</title>
+  <title>RankDankMemes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,7 +14,7 @@
 
 <nav>
   <div class="nav-wrapper">
-    <a href="/" id="dank-logo" class="brand-logo">Dank Memes</a>
+    <a href="/" id="dank-logo" class="brand-logo">Rank Dank Memes</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if dank_user_signed_in? %>
       <li><a href="/memes">Memes</a></li>
