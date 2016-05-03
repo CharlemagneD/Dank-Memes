@@ -1,26 +1,30 @@
 
 <% @url = "http://apimeme.com/meme?meme=" + @meme.meme_type + "&top=" + @meme.top_text + "&bottom=" + @meme.bottom_text %>
 
-<div class ="container">
-  <div class="card">
-   <div class="card-image">
-       <img src = "<%=@url%>"></img>
+<div class="row">
+  <div class="col s12 m16 l6">
+    <div class ="container">
+      <div class="card">
+       <div class="card-image">
+           <img src = "<%=@url%>"></img>
+        </div>
+        <div class="card-content">
+          <p id="meme-type">
+            <strong>Meme type:</strong>
+            <%= @meme.meme_type %>
+          </p>
+          <p>
+           <strong>Rating:</strong>
+           <%= @meme.rating %>
+         </p>
+       </div>
+       <div class="card-action">
+         <%= link_to 'Edit', edit_meme_path(@meme) %>
+       </div>
+      </div>
+      <%= link_to 'Back', memes_path, :class =>'btn waves-effect purple' %>
     </div>
-    <div class="card-content">
-      <p id="meme-type">
-        <strong>Meme type:</strong>
-        <%= @meme.meme_type %>
-      </p>
-      <p>
-       <strong>Rating:</strong>
-       <%= @meme.rating %>
-     </p>
-   </div>
-   <div class="card-action">
-     <%= link_to 'Edit', edit_meme_path(@meme) %>
-   </div>
   </div>
-  <%= link_to 'Back', memes_path, :class =>'btn waves-effect purple' %>
 </div>
 
 
