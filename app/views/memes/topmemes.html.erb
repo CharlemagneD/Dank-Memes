@@ -24,13 +24,6 @@
                 <%= link_to image_tag("/assets/GnomeDown.png", :class =>'meme-vote'), downvote_meme_path(meme), method: :post, :class => "meme-vote" %>
                  <strong><%= meme.rating %></strong>
               </div>
-             <div class="card-action">
-             <% if current_dank_user.id == meme.dank_user_id %>
-               <%= link_to 'Show', meme %>
-               <%= link_to 'Edit', edit_meme_path(meme) %>
-               <%= link_to 'Delete', meme, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-             </div>
          </div>  
        </div>
     <% end %>
