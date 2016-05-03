@@ -7808,6 +7808,7 @@ small {
 
 .card .card-image {
   position: relative;
+  height: 400px;
 }
 
 .card .card-image img {
