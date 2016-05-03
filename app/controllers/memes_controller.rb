@@ -63,6 +63,18 @@ class MemesController < ApplicationController
     end
   end
 
+  def upvote
+    @meme = Meme.find(params[:id])
+    current_dank_user.vote_exclusively_for(@meme)
+    redirect_to(memes_url)
+  end
+
+  def downvote
+    @meme = Meme.find(params[:id])
+    current_dank_user.vote_exclusively_against(@meme)
+    redirect_to(memes_url)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meme

@@ -19,8 +19,9 @@
                   <span class="card-title grey-text text-darken-4>"><%= meme.meme_type %></span>
                 </p>
                 -->
-                <a href="#"><img src="/assets/GnomeDown.png" class="meme-vote"></a>
-                <a href="#"><img src="/assets/GnomeUp.png" class="meme-vote"></a>
+
+                <%= link_to image_tag("/assets/GnomeUp.png"), upvote_meme_path(meme), method: :post, :class => "meme-vote"%>
+                <%= link_to image_tag("/assets/GnomeDown.png"), downvote_meme_path(meme), method: :post, :class => "meme-vote" %>
                  <strong><%= meme.rating %>#placeholder</strong>
               </div>
              <div class="card-action">

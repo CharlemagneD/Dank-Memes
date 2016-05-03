@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   devise_for :dank_users
 
-  resources :memes
+  resources :memes do
+    member do
+      post :upvote
+      post :downvote
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
