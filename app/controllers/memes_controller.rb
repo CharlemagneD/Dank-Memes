@@ -27,6 +27,7 @@ class MemesController < ApplicationController
   # POST /memes.json
   def create
     @meme = current_dank_user.memes.new(meme_params)
+    @meme.rating = 0
 
     respond_to do |format|
       if @meme.save
@@ -65,12 +66,16 @@ class MemesController < ApplicationController
 
   def upvote
     @meme = Meme.find(params[:id])
+    @meme.rating = @meme.rating + 1
+    @meme.save
     current_dank_user.vote_exclusively_for(@meme)
     redirect_to(memes_url)
   end
 
   def downvote
     @meme = Meme.find(params[:id])
+    @meme.rating = @meme.rating - 1
+    @meme.save
     current_dank_user.vote_exclusively_against(@meme)
     redirect_to(memes_url)
   end

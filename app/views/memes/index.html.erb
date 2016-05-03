@@ -22,7 +22,7 @@
 
                 <%= link_to image_tag("/assets/GnomeUp.png"), upvote_meme_path(meme), method: :post, :class => "meme-vote"%>
                 <%= link_to image_tag("/assets/GnomeDown.png"), downvote_meme_path(meme), method: :post, :class => "meme-vote" %>
-                 <strong><%= meme.rating %>#placeholder</strong>
+                 <strong><%= meme.rating %></strong>
               </div>
              <div class="card-action">
              <% if current_dank_user.id == meme.dank_user_id %>
