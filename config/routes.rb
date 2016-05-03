@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   get 'home/index'
+  get 'memes/topmemes'
+  get 'memes/newmemes'
 
   devise_for :dank_users
 

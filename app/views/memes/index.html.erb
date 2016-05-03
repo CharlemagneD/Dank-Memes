@@ -5,7 +5,7 @@
         <% end %>
  <div class="row meme-margin-top">
     <% @memes.each do |meme| %>
-
+    <% if meme.dank_user_id == current_dank_user.id %>
     <% @url = "http://apimeme.com/meme?meme=" + meme.meme_type + "&top=" + meme.top_text + "&bottom=" + meme.bottom_text 
     %>
             <div class="col s12 m4 l4">
@@ -33,6 +33,7 @@
              </div>
          </div>  
        </div>
+       <% end %>
     <% end %>
 </div>  
 </div>

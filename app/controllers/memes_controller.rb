@@ -69,7 +69,7 @@ class MemesController < ApplicationController
     current_dank_user.vote_exclusively_for(@meme)
     @meme.rating = @meme.votes_for
     @meme.save
-    redirect_to(memes_url)
+    redirect_to(:back)
   end
 
   def downvote
@@ -77,7 +77,15 @@ class MemesController < ApplicationController
     current_dank_user.vote_exclusively_against(@meme)
     @meme.rating = @meme.votes_for
     @meme.save
-    redirect_to(memes_url)
+    redirect_to(:back)
+  end
+
+  def topmemes
+    @memes = Meme.order(rating: :desc)
+  end
+
+  def newmemes
+    @memes = Meme.order(updated_at: :desc)
   end
 
   private

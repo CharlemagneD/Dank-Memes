@@ -3,6 +3,11 @@
   src: url(/assets/ka1.ttf) format("truetype");
 }
 
+@font-face{
+  font-family: "Starjhol";
+  src: url(/assets/Starjhol.ttf) format("truetype");
+}
+
 .intro {
     text-align: center;
     padding-top: 13%;
@@ -15,8 +20,10 @@
 }
 
 #dank-text {
-	font-family: "Ka1";
-	background-color: white;
+	font-family: "Starjhol";
+  font-size: 40px;
+  color: yellow;
+  padding-left: 50%;
 }
 
 #dank-logo {

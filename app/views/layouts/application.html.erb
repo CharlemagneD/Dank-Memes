@@ -18,6 +18,8 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if dank_user_signed_in? %>
       <li><a href="/memes">Memes</a></li>
+      <li><a href="/memes/newmemes">New</a></li>
+      <li><a href="/memes/topmemes">Top</a></li>
       <li><a href="#"><%= current_dank_user.email%></a></li>
           <%= link_to "Sign Out", destroy_dank_user_session_path, method: :delete, class:"waves-effect waves-light btn" %>
       <% else %>
