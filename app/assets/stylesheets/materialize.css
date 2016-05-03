@@ -7820,7 +7820,7 @@ small {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 75%;
+  max-height: 85%;
 }
 
 .card .card-image .card-title {
