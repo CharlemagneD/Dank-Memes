@@ -28,6 +28,9 @@
     </ul>
     <ul class="side-nav" id="slide-out">
       <% if dank_user_signed_in? %>
+      <li><a href="/memes">My Memes</a></li>
+      <li><a href="/memes/newmemes">New</a></li>
+      <li><a href="/memes/topmemes">Top</a></li>
       <%= link_to "Sign Out", destroy_dank_user_session_path, method: :delete, class:"waves-effect waves-light btn" %>
       <% else %>
       <%= link_to "Login", new_dank_user_session_path, class:"waves-effect waves-light btn"%>
